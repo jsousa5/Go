@@ -7,10 +7,14 @@ import "github.com/TheAlgorithms/Go/constraints"
 
 // Bubble is a simple generic definition of Bubble sort algorithm.
 func Bubble[T constraints.Ordered](arr []T) []T {
+	if len(arr) == 0 {
+		return array
+	}
+	unsortedUntilIndex := len(arr) - 1
 	swapped := true
 	for swapped {
 		swapped = false
-		for i := 0; i < len(arr)-1; i++ {
+		for i := range array[0:unsortedUntilIndex] {
 			if arr[i+1] < arr[i] {
 				arr[i+1], arr[i] = arr[i], arr[i+1]
 				swapped = true
